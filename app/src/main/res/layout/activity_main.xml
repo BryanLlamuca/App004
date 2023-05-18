@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:fontFamily="casual"
+        android:text="@string/textview_title"
+        android:textColor="@color/design_default_color_secondary"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/editTextCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/textview_code"
+        android:inputType="number"
+        android:minHeight="48dp"
+        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/editTextname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/textview_name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/editTextlastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/textview_apellido"
+        android:inputType="text"
+        android:minHeight="48dp"
+        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/textview_telefono"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/textview_correo"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/buttonInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClicButtonInsert"
+        android:text="@string/button_insert"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonBrowser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClicButtonBrowser"
+        android:text="@string/button_browser"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClicButtonDelete"
+        android:text="@string/button_delete"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClicButtonUpdate"
+        android:text="@string/button_update"
+        tools:ignore="VisualLintButtonSize" />
+
+</LinearLayout>
