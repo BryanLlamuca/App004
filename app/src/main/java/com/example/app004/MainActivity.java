@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         String telefono = editTextTelefono.getText().toString();
         String email = editTextEmail.getText().toString();
 
+
+
         //sql.execSQL("INSERT INTO Clients (Name, Lastname, Phone, Email)");
 
 
