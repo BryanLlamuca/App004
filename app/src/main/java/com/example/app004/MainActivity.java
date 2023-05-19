@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         String name = editTextname.getText().toString();
         String lastname = editTextlastname.getText().toString();
-        String telefono = editTextTelefono.getPrivateImeOptions();
+        String telefono = editTextTelefono.getText().toString();
         String email = editTextEmail.getText().toString();
 
         //sql.execSQL("INSERT INTO Clients (Name, Lastname, Phone, Email)");
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         long count = sql.insert("Clients", null, values);
         sql.close();
 
-
+        Toast.makeText(this, "insertado", Toast.LENGTH_SHORT).show();
 
         editTextname.setText("");
         editTextlastname.setText("");
@@ -72,21 +73,55 @@ public class MainActivity extends AppCompatActivity {
         editTextEmail.setText("");
     }
 
+
+
     public void onClicButtonBrowser(View v){
         DataBaseAdmin dataAdmin= new DataBaseAdmin(this, "Sexto", null, 1);
         SQLiteDatabase sql = dataAdmin.getReadableDatabase();
 
         String code = editTextcode.getText().toString();
 
-        String static SELECT = "SELECT *"+
-                                "FROM Clients";
+        //String static SELECT = "SELECT *"+
+         //                       "FROM Clients";
 
-        final String SELECT = "SELECT Name, lastnama, Phone, Email "+
-                "FROM Clients";
-        
-        Cursor cursor = sql.rawQuery();
+        if (!code.matches(" ")) {
+
+            final String SELECT = "SELECT Name, lastname, Phone, Email " +
+                    "FROM Clients " +
+                    "WHERE Code = " + code;
+
+            Cursor cursor = sql.rawQuery(SELECT, null);
+
+            if (cursor.moveToFirst()) {
+                //while ()
+                editTextname.setText(cursor.getString(0));
+                editTextlastname.setText(cursor.getString(1));
+                editTextTelefono.setText(cursor.getString(2));
+                editTextEmail.setText(cursor.getString(3));
 
 
+            } else {
+                Toast.makeText(this, "Cliente no encontrado", Toast.LENGTH_SHORT).show();
+
+                clearTexts();
+            }
+
+            sql.close();
+
+        }else  {
+            Toast.makeText(this, "Codigo Requerido", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+    private void clearTexts() {
+
+        editTextcode.setText(" ");
+        editTextname.setText(" ");
+        editTextlastname.setText(" ");
+        editTextTelefono.setText(" ");
+        editTextEmail.setText(" ");
     }
 
     public void onClicButtonDelete(View v){

@@ -57,9 +57,9 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/textview_telefono"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:minHeight="48dp"
-        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        tools:ignore="LabelFor,TextFields,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -68,9 +68,9 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/textview_correo"
-        android:inputType="phone"
+        android:inputType="text"
         android:minHeight="48dp"
-        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        tools:ignore="LabelFor,TextFields,VisualLintTextFieldSize" />
 
     <Button
         android:id="@+id/buttonInsert"
